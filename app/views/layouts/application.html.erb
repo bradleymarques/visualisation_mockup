@@ -3,12 +3,25 @@
 <head>
   <title>VisualisationMockup</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "https://cdn.plot.ly/plotly-latest.min.js" %>
+  <%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js" %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<%= controller_name %> <%= action_name %>">
 
-<%= yield %>
+  <%= render partial: "common/navbar" %>
+
+  <div id="main-container" class="container">
+
+    <div class="row">
+      <div class="col-md-12">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+
+  <%= render partial: 'common/footer' %>
 
 </body>
 </html>
