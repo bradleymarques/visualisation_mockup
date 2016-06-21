@@ -3,6 +3,24 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+
+.panel-title {
+  font-weight: bold;
+}
+
+.graph-body {
+  height: 400px;
+  padding: 0px;
+
+  &-sm {
+    height: 200px;
+  }
+
+  &-lg {
+    height: 500px;
+  }
+}
+
 //:::::::::::::::::::: Responsiveness ::::::::::::::::::::::::
 
 #main-container {
