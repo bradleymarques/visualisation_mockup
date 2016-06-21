@@ -1,0 +1,344 @@
+@import "colours";
+@import "fonts";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+//:::::::::::::::::::: Responsiveness ::::::::::::::::::::::::
+
+#main-container {
+  width: 100%;
+  max-width: 1280px;
+}
+
+//:::::::::::::::::::: Utility classes ::::::::::::::::::::::::
+
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: block;
+}
+.clearfix:after {
+  visibility: hidden;
+  height: 0;
+  clear: both;
+}
+.centered {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+.center { text-align: center; }
+.bold { font-weight: bold; }
+.mask { display: none; }
+.right { float: right; }
+.hidden { display: none; }
+
+.top-buffer {
+  margin-top:20px;
+  &-large { margin-top: 60px; }
+  &-small { margin-top: 5px; }
+}
+.vertical-align {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.circular {
+  object-fit: cover;
+  border-radius: 50% !important;
+}
+.mtop {
+  margin-top: 1em;
+}
+
+.fira { font-family: "Fira", "Century Gothic", "CenturyGothic", "AppleGothic","Arial", sans-serif; }
+
+.inline { display: inline-block; }
+
+//:::::::::::::::::::: Customizations ::::::::::::::::::::::::
+
+// Hide the navbar on the login page
+.sessions.new {
+  .navbar {
+    visibility: hidden;
+  }
+}
+
+.action-button {
+  margin: 1px;
+}
+
+h1, h2, h3, h4 {
+  @extend .fira;
+}
+
+.isazi-button {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin: 0.5em;
+
+  color: white;
+  background-color: black;
+
+  &:hover {
+    color: white;
+    text-decoration: none;
+    background-color: grey;
+  }
+
+  &:focus {
+    color: white;
+  }
+
+  &-blue { background-color: $blue; }
+  &-blue:hover { background-color: $light-blue; }
+
+  &-orange { background-color: $orange; }
+  &-orange:hover { background-color: $light-orange; }
+
+  &-red { background-color: $red; }
+  &-red:hover { background-color: $light-red; }
+
+  &-green { background-color: $green; }
+  &-green:hover { background-color: $light-green; }
+
+  &-purple { background-color: $purple; }
+  &-purple:hover { background-color: $light-purple; }
+
+  .glyphicon {
+    font-size: 1em;
+  }
+}
+
+.panel-heading {
+  padding: 0.3em;
+}
+
+
+$status-icon-size:            7em;
+.status-icon {
+  width: 100%;
+  color: white;
+  border-radius: $status-icon-size * 2 0em 0em $status-icon-size * 2;
+  //border-radius: $status-icon-size * 2;
+  height: $status-icon-size;
+  margin: 5px;
+  background-color: grey; /* default to ugly */
+
+  &-circle {
+    //@extend .circular;
+    float: left;
+    @extend .vertical-align;
+
+    //height: $status-icon-size;
+    //width: $status-icon-size;
+    width: 30%;
+    height: 100%;
+    text-align: center;
+    border-radius: $status-icon-size * 2 0em 0em $status-icon-size * 2;
+    background-color: grey; /* default to ugly */
+    i {
+      font-size: 40px;
+      @extend .vertical-align;
+    }
+  }
+
+  &-text-box {
+    //background-color: grey;
+    float: left;
+    width: 70%;
+    height: $status-icon-size;
+
+    .status-icon-text {
+      &-large {
+        //background-color: orange; // FOR TESTING
+        text-align: center;
+        font-size: 1em;
+        width: 100%;
+        font-size: 1em;
+        font-weight: bold;
+        line-height: 2em;
+        height: 0.3 * $status-icon-size;
+
+        h3 {
+          margin: 0;
+        }
+      }
+      &-small {
+        //background-color: red; // FOR TESTING
+        //@extend .vertical-align;
+        width: 100%;
+        text-align: center;
+        height: 0.7 * $status-icon-size;
+        font-size: 1em;
+
+        h4 {
+          margin: 0;
+          font-size: 1.3em;
+          @extend .vertical-align;
+        }
+      }
+    }
+  }
+
+  &-blue {
+    background-color: $light-blue;
+    .status-icon-circle { background-color: $blue; }
+    .status-icon-text-large { background-color: $blue; }
+  }
+  &-blue.status-icon-hover {
+    background-color: $very-light-blue;
+    .status-icon-circle { background-color: $light-blue; }
+    .status-icon-text-large { background-color: $light-blue; }
+  }
+
+  &-orange {
+    background-color: $light-orange;
+    .status-icon-circle { background-color: $orange; }
+    .status-icon-text-large { background-color: $orange; }
+  }
+  &-orange.status-icon-hover {
+    background-color: $very-light-orange;
+    .status-icon-circle { background-color: $light-orange; }
+    .status-icon-text-large { background-color: $light-orange; }
+  }
+
+  &-red {
+    background-color: $light-red;
+    .status-icon-circle { background-color: $red; }
+    .status-icon-text-large { background-color: $red; }
+  }
+  &-red.status-icon-hover {
+    background-color: $very-light-red;
+    .status-icon-circle { background-color: $light-red; }
+    .status-icon-text-large e{ background-color: $light-red; }
+  }
+
+  &-green {
+    background-color: $light-green;
+    .status-icon-circle { background-color: $green; }
+    .status-icon-text-large { background-color: $green; }
+  }
+  &-green.status-icon-hover {
+    background-color: $very-light-green;
+    .status-icon-circle { background-color: $light-green; }
+    .status-icon-text-large { background-color: $light-green; }
+  }
+
+  &-purple {
+    background-color: $light-purple;
+    .status-icon-circle { background-color: $purple; }
+    .status-icon-text-large { background-color: $purple; }
+  }
+  &-purple.status-icon-hover {
+    background-color: $very-light-purple;
+    .status-icon-circle { background-color: $light-purple; }
+    .status-icon-text-large { background-color: $light-purple; }
+  }
+
+  &-brown {
+    background-color: $light-brown;
+    .status-icon-circle { background-color: $brown; }
+    .status-icon-text-large { background-color: $brown; }
+  }
+  &-brown.status-icon-hover {
+    background-color: $very-light-brown;
+    .status-icon-circle { background-color: $light-brown; }
+    .status-icon-text-large { background-color: $light-brown; }
+  }
+
+  &-pink {
+    background-color: $light-pink;
+    .status-icon-circle { background-color: $pink; }
+    .status-icon-text-large { background-color: $pink; }
+  }
+  &-pink.status-icon-hover {
+    background-color: $very-light-pink;
+    .status-icon-circle { background-color: $light-pink; }
+    .status-icon-text-large { background-color: $light-pink; }
+  }
+
+  &-grey {
+    background-color: $light-grey;
+    .status-icon-circle { background-color: $grey; }
+    .status-icon-text-large { background-color: $grey; }
+  }
+  &-grey.status-icon-hover {
+    background-color: $very-light-grey;
+    .status-icon-circle { background-color: $light-grey; }
+    .status-icon-text-large { background-color: $light-grey; }
+  }
+
+  &-yellow {
+    background-color: $light-yellow;
+    .status-icon-circle { background-color: $yellow; }
+    .status-icon-text-large { background-color: $yellow; }
+  }
+  &-yellow.status-icon-hover {
+    background-color: $very-light-yellow;
+    .status-icon-circle { background-color: $light-yellow; }
+    .status-icon-text-large { background-color: $light-yellow; }
+  }
+
+  &-cyan {
+    background-color: $light-cyan;
+    .status-icon-circle { background-color: $cyan; }
+    .status-icon-text-large { background-color: $cyan; }
+  }
+  &-cyan.status-icon-hover {
+    background-color: $very-light-cyan;
+    .status-icon-circle { background-color: $light-cyan; }
+    .status-icon-text-large { background-color: $light-cyan; }
+  }
+}
+
+//:::::::::::::::::::: Forms ::::::::::::::::::::::::
+
+.form {
+  label {
+    text-align: left !important;
+    display: block;
+  }
+}
+
+//:::::::::::::::::::: Layout ::::::::::::::::::::::::
+
+.navbar { margin: 0 !important; }
+
+.avatar-navbar {
+  height: 50px;
+  padding: 0;
+
+  img {
+    height: 40px !important;
+    @extend .vertical-align;
+  }
+}
+img.avatar-thumb {
+  margin: 0;
+  height: 30px;
+  display: inline;
+  @extend .circular;
+  -webkit-box-shadow: 0px 0px 5px 1px #A9A9A9;
+  -moz-box-shadow: 0px 0px 5px 1px #A9A9A9;
+  box-shadow: 0px 0px 5px 1px #A9A9A9;
+}
+td img.avatar-thumb {
+  margin-right: 0.5em;
+}

@@ -1,0 +1,19 @@
+<% large_text_id = large_text_id || "large-text" %>
+<% data_behaviour = data_behaviour || "" %>
+<% count_data = count_data || "" %>
+
+<div class="status-icon status-icon-<%= colour %>">
+  <div class="status-icon-circle">
+    <i class="<%= glyph_class %>"></i>
+  </div>
+
+  <div class="status-icon-text-box">
+    <div id="<%= large_text_id %>" class="status-icon-text status-icon-text-large">
+      <h3 data-behaviour="<%= data_behaviour %>" data-count-data="<%= count_data %>"><%= large_text %></h3>
+    </div>
+
+    <div class="status-icon-text status-icon-text-small">
+      <h4><%= small_text %></h4>
+    </div>
+  </div>
+</div>
